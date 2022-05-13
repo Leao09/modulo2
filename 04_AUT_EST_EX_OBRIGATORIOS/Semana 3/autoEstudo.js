@@ -30,7 +30,7 @@ function calculoT(v0, operator, g){
     return t;
 };                                      
 function calculoH(v0, operator, g){
-    if(operator == "/"){
+    if(operator == "/" ){
         h = (v0*v0)/(2*g);
     }
     return h;
