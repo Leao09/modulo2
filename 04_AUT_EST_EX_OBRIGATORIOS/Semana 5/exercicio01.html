@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercicio01</title>
+  </head>
+  <body>
+    <div>
+      <h1>Exercicio01</h1>
+      <div class="input">
+        <h2>Primeiro numero</h2>
+        <input id="val1" type="number" />
+      </div>
+      <div class="input">
+        <h2>Segundo numero</h2>
+        <input id="val2" type="number" />
+      </div>
+      <br />
+      <button onclick="somar()">Somar</button>
+      <button onclick="subtrair()">Subtrair</button>
+      <button onclick="dividir()">Dividir</button>
+      <button onclick="multiplicar()">Multiplicar</button>
+      <button onclick="exponenciação()">exponenciação</button>
+      <button onclick="restoDiv()">Res.divisão</button>
+      <br /><br />
+      O resultado é <span></span>
+      <script>
+        var valor1 = document.querySelector("#val1");
+        var valor2 = document.querySelector("#val2");
+        var resultado = document.querySelector("span");
+
+        function somar() {
+          resultado.innerHTML = parseInt(valor1.value) + parseInt(valor2.value);
+        }
+
+        function subtrair() {
+          resultado.innerHTML = parseInt(valor1.value) - parseInt(valor2.value);
+        }
+
+        function dividir() {
+          resultado.innerHTML =
+            parseFloat(valor1.value) / parseFloat(valor2.value);
+        }
+
+        function multiplicar() {
+          resultado.innerHTML = parseInt(valor1.value) * parseInt(valor2.value);
+        }
+
+        function exponenciação() {
+          resultado.innerHTML =
+            parseInt(valor1.value) ** parseInt(valor2.value);
+        }
+
+        function restoDiv() {
+          resultado.innerHTML = parseInt(valor1.value) % parseInt(valor2.value);
+        }
+      </script>
+    </div>
+  </body>
+</html>

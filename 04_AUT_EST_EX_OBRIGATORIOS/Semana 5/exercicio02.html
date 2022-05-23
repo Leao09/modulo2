@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercicio02</title>
+  </head>
+  <body>
+    <div>
+      <h1>Exercicio02</h1>
+      <div class="input">
+        <h2>Preço do produto</h2>
+        <input id="preço" type="number" />
+      </div>
+      <div id="result"></div>
+      <script>
+        function Calcular() {
+          var opera = Number(document.getElementById("preço").value);
+
+          mostra(Calcula(opera));
+        }
+
+        function Calcula(opera) {
+          debugger;
+          var cem = 0;
+          var cinquenta = 0;
+          var vinte = 0;
+          var dez = 0;
+          var cinco = 0;
+          var dois = 0;
+          var um = 0;
+
+          if (opera >= 100) {
+            cem = Math.floor(opera / 100);
+            opera = opera - cem * 100;
+          }
+          if (opera >= 50) {
+            cinquenta = Math.floor(opera / 50);
+            opera = opera - cinquenta * 50;
+          }
+          if (opera >= 20) {
+            vinte = Math.floor(opera / 20);
+            opera = opera - vinte * 20;
+          }
+          if (opera >= 10) {
+            dez = Math.floor(opera / 10);
+            opera = opera - dez * 10;
+          }
+          if (opera >= 5) {
+            cinco = Math.floor(opera / 5);
+            opera = opera - cinco * 5;
+          }
+          if (opera >= 2) {
+            dois = Math.floor(opera / 2);
+            opera = opera - dois * 2;
+          }
+          if (opera >= 1) {
+            um = Math.floor(opera / 1);
+            opera = opera - um * 1;
+          }
+
+          return [
+            `${um} notas de um <br /> ${dois} notas de dois <br /> ${cinco} notas de cinco <br /> ${dez} notas de dez <br /> ${vinte} notas de vinte <br /> ${cinquenta} notas de cinquenta e <br /> ${cem} notas de cem`,
+          ];
+        }
+        function mostra(res) {
+          document.getElementById("result").innerHTML = `<br /> ${res}`;
+        }
+      </script>
+      <button onclick="Calcular()">Resultado</button>
+    </div>
+  </body>
+</html>
