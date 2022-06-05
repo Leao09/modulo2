@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercico 2</title>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-md">
+        <h2>Digite o primeiro texto</h2>
+        <input id="text1" type="text" />
+      </div>
+      <br /><br />
+      <div class="col-md">
+        <h2>Digite o segundo texto</h2>
+        <input id="text2" type="text" />
+      </div>
+      <br /><br />
+      <button onclick="trocatexto()">Trocar textos</button>
+    </div>
+  </body>
+  <script>
+    function trocatexto() {
+      var texto1 = document.getElementById("text1").value;
+      var texto2 = document.getElementById("text2").value;
+      document.getElementById("text2").value = texto1;
+      document.getElementById("text1").value = texto2;
+    }
+  </script>
+</html>
