@@ -15,7 +15,7 @@ app.get("/users", (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
 
   var db = new sqlite3.Database(DBPATH);
-  var sql = "SELECT * FROM curriculo ORDER BY title COLLATE NOCASE";
+  var sql = "SELECT * FROM curriculo ORDER BY curso COLLATE NOCASE";
   db.all(sql, [], (err, rows) => {
     if (err) {
       throw err;
@@ -30,8 +30,8 @@ app.post("/userinsert", urlencodedParser, (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*"); // Isso é importante para evitar o erro de CORS
 
   sql =
-    "INSERT INTO curriculo (title, id) VALUES ('" +
-    req.body.title +
+    "INSERT INTO curriculo (curso, id) VALUES ('" +
+    req.body.curso +
     "','" +
     req.body.id +
     "')";
@@ -64,8 +64,8 @@ app.post("/userup", urlencodedParser, (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*"); // Isso é importante para evitar o erro de CORS
 
   sql =
-    "UPDATE curriculo SET title = '" +
-    req.body.title +
+    "UPDATE curriculo SET curso = '" +
+    req.body.curso +
     "' WHERE id = " +
     req.body.id;
   var db = new sqlite3.Database(DBPATH); // Abre o banco
